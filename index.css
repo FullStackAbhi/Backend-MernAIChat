@@ -1,0 +1,40 @@
+a.navbar-brand,
+a.navbar-brand:hover {
+  color: aliceblue;
+}
+div.collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#users-wrapper {
+  margin-top: 20px;
+}
+
+div.card {
+  margin-bottom: 1rem;
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+nav .toggle-out {
+  width: 7rem;
+  border: 1px solid white;
+  padding: 0.5rem 0.2rem;
+  border-radius: 25%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+nav .toggle-in {
+  width: 1rem;
+  background-color: white;
+  border-radius: 80%;
+  transition: all 0.5sec ease-out;
+}
