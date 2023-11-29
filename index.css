@@ -35,6 +35,6 @@ nav .toggle-out {
 nav .toggle-in {
   width: 1rem;
   background-color: white;
-  border-radius: 80%;
+  border-radius: 100%;
   transition: all 0.5sec ease-out;
 }
