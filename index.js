@@ -3,6 +3,17 @@ import { renderUser } from "./script.js/utility.js";
 import { getCardHTML, getRow, description } from "./script.js/markup.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  //for dark mode
+  const outerTooogle = document.querySelector(".toggle-out");
+  outerTooogle.addEventListener("click", function () {
+    outerTooogle.classList.toggle("active");
+    let html = document.documentElement;
+    if (outerTooogle.classList.contains("active")) {
+      html.setAttribute("data-bs-theme", "dark");
+    } else html.removeAttribute("data-bs-theme");
+  });
+
+  // for home page
   const wrapper = document.getElementById("users-wrapper");
   getAllUsers().then((allUsers) => {
     let row = getRow();
@@ -20,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       row.append(col);
     }
   });
-
+  //for decription page
   document.addEventListener("click", (evt) => {
     evt.preventDefault();
     const userId = evt.target.dataset["userid"];
@@ -28,13 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (userId) {
       getSingleUser(userId).then((userid) => {
         renderUser(userid);
-        //console.log(userId);
       });
     } else if (evt.target.localName == "button") {
       const input = document.querySelector("input");
+      if (!input.value) return;
       getSingleUser(input.value).then((randomuser) => {
         renderUser(randomuser);
       });
     }
   });
+
+  
 });
